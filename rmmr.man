@@ -17,10 +17,12 @@ The script
 searches for "\fIname\fR" in the 
 .I mailout
 source data file and provided that only one match is found copies the record to
-the source "deleted" file. The record is then removed from the source data file.
+the source "\fIdeleted\fR" file. The record is then removed from the source 
+.I data
+file.
 .B RCS
-is used to track the changes. Finally the production copies of the "data" and
-"deleted" files are updated.
+is used to track the changes. Finally the production copies of the "\fIdata\fR"
+and "\fIdeleted\fR" files are updated.
 .SH OPTIONS
 .TP 5
 \fB-c \fI<config_file>\fR
@@ -32,13 +34,12 @@ may be changed on the command line by using the \fB-c\fR option.
 Set \fIdebug\fR mode on. The script will report its progress to screen
 as it runs. 
 .TP 5
-.TP 5
 .B -v
 Set the operation mode of the script to 
 .IR verbose .
+.TP 5
 .B -V
 prints the "\fBrmmr\fR" release details and terminates.
-
 .SH EXAMPLES
 .IP
 .nf
