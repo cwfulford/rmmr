@@ -62,6 +62,8 @@ also modified.
 .SH BUGS
 Not really bugs but the script has very little input error checking.
 .SH FILES
-.IR /usr/local/etc/mailout.cf ,
+.IR /usr/local/etc/mailout.cf .
+.SH SEE ALSO
+.IR mailout .
 .SH AUTHOR
 Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.
