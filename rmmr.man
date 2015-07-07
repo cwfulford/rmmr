@@ -1,4 +1,4 @@
-.TH RMMR 8l "7 July r1.3
+.TH RMMR 8l "7 July r1.4
 .SH NAME
 .B rmmr
 - removes a record from a
