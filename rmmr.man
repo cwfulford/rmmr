@@ -1,0 +1,72 @@
+.TH RMMR 8l "7 July r1.1
+.SH NAME
+.B rmmr
+- removes a record from a
+.I mailout
+data file.
+.SH SYNOPSIS
+\fBrmmr\fR [\fB-c \fI<config_file>\fR] [\fB-d\fR]
+[\fB-v\fR] \fI<name>\fR | [\fB-V\fR]
+.SH AVAILABILITY
+.B rmmr
+is a Bourne shell script and should work equally well on all versions of UNIX,
+Linux and Mac OS X.
+.SH DESCRIPTION
+The script
+.B rmmr 
+searches for "\fIname\fR" in the 
+.I mailout
+source data file and provided that only one match is found copies the record to
+the source "deleted" file. The record is then removed from the source data file.
+.B RCS
+is used to track the changes. Finally the production copies of the "data" and
+"deleted" files are updated.
+.SH OPTIONS
+.TP 5
+\fB-c \fI<config_file>\fR
+The default configuration file is 
+\fI/src/<\fIhostname\fR>/usr/local/etc/mailout.cf\fR. This
+may be changed on the command line by using the \fB-c\fR option.
+.TP 5
+.B -d
+Set \fIdebug\fR mode on. The script will report its progress to screen
+as it runs. 
+.TP 5
+.TP 5
+.B -v
+Set the operation mode of the script to 
+.IR verbose .
+.B -V
+prints the "\fBrmmr\fR" release details and terminates.
+
+.SH EXAMPLES
+.IP
+.nf
+.ft CW
+rmmr -v  jonathan
+.fi
+.ft R
+.LP
+Searches for the string "jonathan" in the source data file. If more than
+one match is found a warning is written to standard error and the script
+terminates.
+.LP
+If a single match is found a copy of the data record is appended to the
+"deleted" file and removed from the source "data" file.
+.LP
+The 
+.B RCS
+records are updated for both files and then the production files are 
+also modified.
+.SH BUGS
+Not really bugs but the script has very little input error checking.
+.LP
+The fields for the recipient names and email addresses are hardwired
+as are the strings that are to be substituted in the message file, ie. 
+\fI"rcpt"\fR and "\fIfirstname\fR".
+.LP
+The \fIfrom\fR address is also hardwired.
+.SH FILES
+.IR /usr/local/etc/mailout.cf ,
+.SH AUTHOR
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.

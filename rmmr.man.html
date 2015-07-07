@@ -1,0 +1,153 @@
+
+<p><a href="#heading1">NAME</a><br/>
+<a href="#heading2">SYNOPSIS</a><br/>
+<a href="#heading3">AVAILABILITY</a><br/>
+<a href="#heading4">DESCRIPTION</a><br/>
+<a href="#heading5">OPTIONS</a><br/>
+<a href="#heading6">EXAMPLES</a><br/>
+<a href="#heading7">BUGS</a><br/>
+<a href="#heading8">FILES</a><br/>
+<a href="#heading9">AUTHOR</a><br/>
+
+</p>
+<hr/>
+
+
+<h2 id="heading1">NAME
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b><a href="./scripts.php?script=rmmr">rmmr</a></b> -
+removes a record from a <i>mailout</i> data file.</p>
+
+<h2 id="heading2">SYNOPSIS
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b><a href="./scripts.php?script=rmmr">rmmr</a></b>
+[<b>-c</b> <i>&lt;config_file&gt;</i>] [<b>-d</b>]
+[<b>-v</b>] <i>&lt;name&gt;</i> | [<b>-V</b>]</p>
+
+<h2 id="heading3">AVAILABILITY
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b><a href="./scripts.php?script=rmmr">rmmr</a></b> is
+a Bourne shell script and should work equally well on all
+versions of UNIX, Linux and Mac OS X.</p>
+
+<h2 id="heading4">DESCRIPTION
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The script
+<b><a href="./scripts.php?script=rmmr">rmmr</a></b> searches for &quot;<i>name</i>&quot; in the
+<i>mailout</i> source data file and provided that only one
+match is found copies the record to the source
+&quot;deleted&quot; file. The record is then removed from
+the source data file. <b>RCS</b> is used to track the
+changes. Finally the production copies of the
+&quot;data&quot; and &quot;deleted&quot; files are
+updated.</p>
+
+<h2 id="heading5">OPTIONS
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>-c</b>
+<i>&lt;config_file&gt;</i></p>
+
+<p style="margin-left:18%;">The default configuration file
+is <i>/src/&lt;hostname</i>&gt;/usr/local/etc/mailout.cf.
+This may be changed on the command line by using the
+<b>-c</b> option.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<colgroup><col width="11%"></col>
+<col width="3%"></col>
+<col width="4%" class="center"></col>
+<col width="82%"></col>
+</colgroup>
+<tr valign="top" align="left">
+<td></td>
+<td>
+
+
+<p><b>-d</b></p></td>
+<td></td>
+<td>
+
+
+<p>Set <i>debug</i> mode on. The script will report its
+progress to screen as it runs.</p></td></tr>
+<tr valign="top" align="left">
+<td></td>
+<td>
+
+
+<p style="margin-top: 1em"><b>-v</b></p></td>
+<td></td>
+<td>
+
+
+<p style="margin-top: 1em">Set the operation mode of the
+script to <i>verbose</i>. <b>-V</b> prints the
+&quot;<b><a href="./scripts.php?script=rmmr">rmmr</a></b>&quot; release details and terminates.</p></td></tr>
+</table>
+
+<h2 id="heading6">EXAMPLES
+</h2>
+
+
+<pre style="margin-left:22%; margin-top: 1em"><a href="./scripts.php?script=rmmr">rmmr</a> -v  jonathan</pre>
+
+
+<p style="margin-left:11%; margin-top: 1em">Searches for
+the string &quot;jonathan&quot; in the source data file. If
+more than one match is found a warning is written to
+standard error and the script terminates.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If a single
+match is found a copy of the data record is appended to the
+&quot;deleted&quot; file and removed from the source
+&quot;data&quot; file.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The <b>RCS</b>
+records are updated for both files and then the production
+files are also modified.</p>
+
+<h2 id="heading7">BUGS
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Not really bugs
+but the script has very little input error checking.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The fields for
+the recipient names and email addresses are hardwired as are
+the strings that are to be substituted in the message file,
+ie. <i>&quot;rcpt&quot;</i> and
+&quot;<i>firstname</i>&quot;.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The <i>from</i>
+address is also hardwired.</p>
+
+<h2 id="heading8">FILES
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>/usr/local/etc/mailout.cf</i>,</p>
+
+<h2 id="heading9">AUTHOR
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Clifford W
+Fulford, <a href="http://www.citylinux.com"
+title="Go to the City Linux homepage">
+City Linux
+</a>. Contact <a href="mailto:fulford@fulford.net" title="Send mail to Clifford W Fulford">fulford@fulford.net</a> or +44
+(0)709 229 5385.</p>
+<hr/>
